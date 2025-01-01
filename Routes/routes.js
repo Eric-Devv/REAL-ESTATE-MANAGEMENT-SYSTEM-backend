@@ -12,23 +12,23 @@ const{addProperty,
 // CRUD operations
 
 // Route to add a new property 1. C
-router.post("/api/properties", addProperty);
+router.post("/add-property", addProperty);
 
 
 // Route to get all properties 2. R
-router.get("/api/properties", getProperties);
+router.get("/", getProperties);
 
 
 // Route to add a review for a property 3. C
-router.post("/api/properties/:id/review",  propertyReview);
+router.post("/:id/review",  propertyReview);
 
 
 // api to update properties 4. U
-router.patch("/api/properties/:id/update-property", propertyUpdate);
+router.patch("/:id/update-property", propertyUpdate);
 
 
 // Delete a property by ID 5. D
-router.delete("/api/properties/:id",  propertyDelete);
+router.delete("/:id",  propertyDelete);
 
 
 module.exports = router;
