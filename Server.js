@@ -36,5 +36,5 @@ app.use('./api/properties/', routes)
 
 //app's server port configuration
 app.listen(process.env.PORT, () => {
-	console.log(`Server is running on port`,PORT);
+	console.log(`Server is running on port`,PORT,"and now listening for requests");
 });
