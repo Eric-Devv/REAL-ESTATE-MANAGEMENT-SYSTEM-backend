@@ -4,7 +4,7 @@ const{addProperty,
     getProperties,
     propertyReview,
     propertyDelete,
-    propertyUpdate,} = require("../Controllers/controllers")
+    propertyUpdate,} = require("../Controllers/controllers.js")
 
 
 // API endpoints

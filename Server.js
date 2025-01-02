@@ -25,16 +25,12 @@ mongoose.connect(process.env.MONGO_URL)
 	});
 	
 
-	
-	
-
-
 // Universal server routing
-app.use('./api/properties/', routes)
+app.use('/api/properties/', routes)
 
 
 
 //app's server port configuration
 app.listen(process.env.PORT, () => {
-	console.log(`Server is running on port`,PORT,"and now listening for requests");
+	console.log(`Server is running on port`,PORT,"& now listening for requests");
 });

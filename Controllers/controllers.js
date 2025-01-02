@@ -13,7 +13,7 @@ const addProperty = async(req, res) =>  {
 		}
 
 		// Create a new property
-		const newProperty = new Property({
+		const newProperty = Property({
 			title,
 			description,
 			image,
