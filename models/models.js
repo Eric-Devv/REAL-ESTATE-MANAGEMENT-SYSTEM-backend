@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const propertySchema = new mongoose.Schema({
 	title: String,
 	description: String,
+	price: Number,
 	image: String,
 	contact: String,
 	reviews: [

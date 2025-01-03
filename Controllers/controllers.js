@@ -3,10 +3,10 @@ const Property = require("../models/models")
 
 // controller to add a new property
 const addProperty = async(req, res) =>  {
-    const { title, description, image, contact } = req.body;
+    const { title, description, price, image, contact } = req.body;
 	try {
 		// Validate request data
-		if (!title || !description || !image || !contact) {
+		if (!title || !description || !image || !contact ||!price) {
 			return res
 				.status(400)
 				.json({ message: "Incomplete property data" });
@@ -16,6 +16,7 @@ const addProperty = async(req, res) =>  {
 		const newProperty = Property({
 			title,
 			description,
+			price,
 			image,
 			contact,
 			reviews: [],
