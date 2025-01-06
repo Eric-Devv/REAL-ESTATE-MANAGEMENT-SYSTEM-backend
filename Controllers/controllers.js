@@ -78,16 +78,27 @@ const propertyDelete = async(req, res) => {
 
 // update a property
 const propertyUpdate = async(req, res) => {
-    const propertyId = req.params.id;
+	const propertyId = req.params.id;
 
-    if (!updateProperty(propertyId)){
-        return res.status(404).json({message: "No such property"})
-    }
-    res.status(200).json({message: "property updated", updateProperty});
-
-    const updateProperty = await Property.findByIdandUpdate(propertyId, {
-    ...req.body
-    });
+	try {
+	  // Attempt to find and update the property
+	  const updatedProperty = await Property.findByIdAndUpdate(
+		propertyId,
+		{ ...req.body }, // Spread the request body for updates
+		{ new: true } // Return the updated document
+	  );
+  
+	  if (!updatedProperty) {
+		// If no property is found, send a 404 response
+		return res.status(404).json({ message: "No such property" });
+	  }
+  
+	  // Send a success response with the updated property
+	  res.status(200).json({ message: "Property updated successfully", property: updatedProperty });
+	} catch (error) {
+	  // Handle any errors
+	  res.status(500).json({ message: "Server error", error: error.message });
+	}
 }
 
 module.exports = {

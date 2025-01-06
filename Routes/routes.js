@@ -24,7 +24,7 @@ router.post("/:id/review",  propertyReview);
 
 
 // api to update properties 4. U
-router.patch("/:id/update-property", propertyUpdate);
+router.patch("/:id", propertyUpdate);
 
 
 // Delete a property by ID 5. D
